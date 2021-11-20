@@ -1,0 +1,37 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "F:\iverilog\lib\ivl\system.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "F:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "F:\iverilog\lib\ivl\va_math.vpi";
+S_000002319e0e2f30 .scope module, "Mux" "Mux" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 64 "first";
+    .port_info 1 /INPUT 64 "second";
+    .port_info 2 /INPUT 1 "inp";
+    .port_info 3 /OUTPUT 64 "out";
+P_000002319e1f8f90 .param/l "n" 0 2 3, +C4<00000000000000000000000001000000>;
+v000002319e0e37a0_0 .net *"_ivl_0", 31 0, L_000002319e1fde50;  1 drivers
+L_000002319e160008 .functor BUFT 1, C4<0000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v000002319e0e30c0_0 .net *"_ivl_3", 30 0, L_000002319e160008;  1 drivers
+L_000002319e160050 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v000002319e0e3160_0 .net/2u *"_ivl_4", 31 0, L_000002319e160050;  1 drivers
+v000002319e0e3200_0 .net *"_ivl_6", 0 0, L_000002319e1fdef0;  1 drivers
+o000002319e117048 .functor BUFZ 64, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v000002319e0e32a0_0 .net "first", 63 0, o000002319e117048;  0 drivers
+o000002319e117078 .functor BUFZ 1, C4<z>; HiZ drive
+v000002319e0e3340_0 .net "inp", 0 0, o000002319e117078;  0 drivers
+v000002319e1fdd10_0 .net "out", 63 0, L_000002319e1fdf90;  1 drivers
+o000002319e1170d8 .functor BUFZ 64, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v000002319e1fddb0_0 .net "second", 63 0, o000002319e1170d8;  0 drivers
+L_000002319e1fde50 .concat [ 1 31 0 0], o000002319e117078, L_000002319e160008;
+L_000002319e1fdef0 .cmp/eq 32, L_000002319e1fde50, L_000002319e160050;
+L_000002319e1fdf90 .functor MUXZ 64, o000002319e1170d8, o000002319e117048, L_000002319e1fdef0, C4<>;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mux2_64bit.v";

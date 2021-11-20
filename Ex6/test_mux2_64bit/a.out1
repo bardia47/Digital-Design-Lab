@@ -1,0 +1,10 @@
+**** module/scope: Mux
+     Flip-Flops   : 0
+     Logic Gates  : 192
+     EQUALITY[32]: 1 units
+     MUX[2]: 64 slices
+**** TOTALS
+     Flip-Flops   : 0
+     Logic Gates  : 192
+     EQUALITY[32]: 1 units
+     MUX[2]: 64 slices
